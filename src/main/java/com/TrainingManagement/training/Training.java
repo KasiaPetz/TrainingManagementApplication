@@ -1,7 +1,10 @@
 package com.TrainingManagement.training;
 
+import com.TrainingManagement.paricipiant.Participiant;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "TRAINING")
@@ -17,6 +20,8 @@ public class Training {
     private LocalDate trainingDate;
     @Column(length = 50, nullable = false)
     private String city;
+    @OneToMany(mappedBy = "training")
+    private List<Participiant> participiants;
 
     public Integer getId() {
         return id;

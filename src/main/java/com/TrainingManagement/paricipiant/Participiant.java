@@ -1,5 +1,7 @@
 package com.TrainingManagement.paricipiant;
 
+import com.TrainingManagement.training.Training;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -20,6 +22,9 @@ public class Participiant {
     @Column(length = 50)
     private String position;
     private LocalDate employmentDate;
+    @ManyToOne
+    @JoinColumn(name = "training_fk", nullable = false)
+    private Training training;
 
     public String getFirstname() {
         return firstname;
