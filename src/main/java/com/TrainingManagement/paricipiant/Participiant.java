@@ -21,6 +21,7 @@ public class Participiant {
     private String teta;
     @Column(length = 50)
     private String position;
+    @Column(length = 10)
     private LocalDate employmentDate;
     @ManyToOne
     @JoinColumn(name = "training_fk", nullable = false)
