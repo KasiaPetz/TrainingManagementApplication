@@ -1,7 +1,7 @@
-package com.TrainingManagement.answer;
+package com.trainingmanagement.answer;
 
-import com.TrainingManagement.question.Question;
-import com.TrainingManagement.surveBody.SurveBody;
+import com.trainingmanagement.question.Question;
+import com.trainingmanagement.survebody.SurveBody;
 
 import javax.persistence.*;
 
@@ -13,10 +13,16 @@ public class Answer {
     @Column(name = "ANSWER_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Column(nullable = false)
     private String content;
 
+    @ManyToOne
+    @JoinColumn(name = "surve_body_fk", nullable = false)
     private SurveBody surveBody;
+
+    @ManyToOne
+    @JoinColumn(name = "question_fk", nullable = false)
     private Question question;
 
     public Integer getId() {
@@ -27,4 +33,11 @@ public class Answer {
         return content;
     }
 
+    public SurveBody getSurveBody() {
+        return surveBody;
+    }
+
+    public Question getQuestion() {
+        return question;
+    }
 }

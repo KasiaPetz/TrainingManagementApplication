@@ -1,4 +1,4 @@
-package com.TrainingManagement;
+package com.trainingmanagement;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

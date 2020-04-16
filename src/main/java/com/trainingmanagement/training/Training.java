@@ -1,11 +1,9 @@
-package com.TrainingManagement.training;
+package com.trainingmanagement.training;
 
-import com.TrainingManagement.paricipiant.Participiant;
-import com.TrainingManagement.surve.Surve;
+import com.trainingmanagement.surve.Surve;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Table(name = "TRAINING")
@@ -15,14 +13,16 @@ public class Training {
     @Column(name = "TRAINING_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Column(nullable = false)
     private String title;
+
     @Column(nullable = false)
     private LocalDate trainingDate;
+
     @Column(length = 50, nullable = false)
     private String city;
-    @OneToMany(mappedBy = "training")
-    private List<Participiant> participiants;
+
     @OneToOne(mappedBy = "training")
     private Surve surve;
 
@@ -40,5 +40,9 @@ public class Training {
 
     public String getCity() {
         return city;
+    }
+
+    public Surve getSurve() {
+        return surve;
     }
 }
