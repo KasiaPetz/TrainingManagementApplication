@@ -1,6 +1,7 @@
 package com.TrainingManagement.training;
 
 import com.TrainingManagement.paricipiant.Participiant;
+import com.TrainingManagement.surve.Surve;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -22,6 +23,8 @@ public class Training {
     private String city;
     @OneToMany(mappedBy = "training")
     private List<Participiant> participiants;
+    @OneToOne(mappedBy = "training")
+    private Surve surve;
 
     public Integer getId() {
         return id;

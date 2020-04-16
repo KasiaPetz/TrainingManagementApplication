@@ -13,16 +13,22 @@ public class Participiant {
     @Column(name = "PARTICIPIANT_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Column(length = 50, nullable = false)
     private String firstname;
+
     @Column(length = 50, nullable = false)
     private String lastname;
+
     @Column(length = 10, nullable = false)
     private String teta;
+
     @Column(length = 50)
     private String position;
+
     @Column(length = 10)
     private LocalDate employmentDate;
+
     @ManyToOne
     @JoinColumn(name = "training_fk", nullable = false)
     private Training training;
