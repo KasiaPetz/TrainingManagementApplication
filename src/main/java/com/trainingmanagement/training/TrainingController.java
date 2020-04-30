@@ -20,7 +20,7 @@ public class TrainingController {
 
     @GetMapping("/getAll")
     public List<Training> getAll() {
-        return this.trainingService.getAll();
+        return this.trainingService.getAll(); //tu mamy liste Training a chemy zwrocic liste TrainingDto
     }
 
 }
