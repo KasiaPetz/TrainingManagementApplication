@@ -7,7 +7,7 @@ import java.util.List;
 
 @Service
 public class SurveBodyService {
-    private SurveBodyDao surveBodyDao;
+    private final SurveBodyDao surveBodyDao;
 
     @Autowired
     public SurveBodyService(SurveBodyDao surveBodyDao) {
