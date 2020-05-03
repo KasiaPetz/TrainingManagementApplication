@@ -1,15 +1,19 @@
 package com.trainingmanagement.question;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class QuestionService {
-    private final Question question;
+    private final QuestionDao questionDao;
 
-    @Autowired
-    public QuestionService(Question question) {
-        this.question = question;
+    public QuestionService(QuestionDao questionDao) {
+        this.questionDao = questionDao;
+    }
+
+    public List<Question> getAll() {
+        return this.questionDao.findAll();
     }
 
 }
