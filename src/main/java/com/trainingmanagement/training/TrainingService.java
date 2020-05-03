@@ -18,4 +18,5 @@ public class TrainingService {
     public List<Training> getAll() {
         return this.trainingDao.findAll();
     }
+
 }
