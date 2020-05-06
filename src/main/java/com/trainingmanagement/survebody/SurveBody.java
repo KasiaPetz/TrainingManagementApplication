@@ -1,6 +1,7 @@
 package com.trainingmanagement.survebody;
 
 import com.trainingmanagement.answer.Answer;
+import com.trainingmanagement.surve.Surve;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -20,7 +21,7 @@ public class SurveBody {
 
     @ManyToOne
     @JoinColumn(name = "surve_fk", nullable = false)
-    private SurveDao surve;
+    private Surve surve;
 
     @OneToMany(mappedBy = "surveBody")
     private List<Answer> answers;
@@ -33,7 +34,7 @@ public class SurveBody {
         return fillDate;
     }
 
-    public SurveDao getSurve() {
+    public Surve getSurve() {
         return surve;
     }
 

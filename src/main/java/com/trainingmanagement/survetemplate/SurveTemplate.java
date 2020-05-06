@@ -1,6 +1,7 @@
 package com.trainingmanagement.survetemplate;
 
 import com.trainingmanagement.question.Question;
+import com.trainingmanagement.surve.Surve;
 
 import javax.persistence.*;
 import java.util.List;
@@ -21,7 +22,7 @@ public class SurveTemplate {
     private List<Question> questions;
 
     @OneToMany(mappedBy = "surveTemplate")
-    private List<SurveDao> surves;
+    private List<Surve> surves;
 
     public Integer getId() {
         return id;
@@ -35,7 +36,7 @@ public class SurveTemplate {
         return questions;
     }
 
-    public List<SurveDao> getSurves() {
+    public List<Surve> getSurves() {
         return surves;
     }
 }

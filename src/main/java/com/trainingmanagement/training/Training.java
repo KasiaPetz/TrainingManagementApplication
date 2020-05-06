@@ -1,5 +1,7 @@
 package com.trainingmanagement.training;
 
+import com.trainingmanagement.surve.Surve;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -22,7 +24,7 @@ public class Training {
     private String city;
 
     @OneToOne(mappedBy = "training")
-    private SurveDao surve;
+    private Surve surve;
 
     public Integer getId() {
         return id;
@@ -40,7 +42,7 @@ public class Training {
         return city;
     }
 
-    public SurveDao getSurve() {
+    public Surve getSurve() {
         return surve;
     }
 }
