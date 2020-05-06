@@ -12,15 +12,19 @@ import java.util.List;
 public class TrainingController {
 
     private final TrainingService trainingService;
+    private final TrainingMapper trainingMapper;
 
     @Autowired
-    public TrainingController(TrainingService trainingService) {
+    public TrainingController(TrainingService trainingService, TrainingMapper trainingMapper) {
         this.trainingService = trainingService;
+        this.trainingMapper = trainingMapper;
     }
 
     @GetMapping("/getAll")
-    public List<Training> getAll() {
-        return this.trainingService.getAll(); //tu mamy liste Training a chemy zwrocic liste TrainingDto
+    public List<TrainingDto> getAll() {
+        final List<Training> trainings = this.trainingService.getAll();
+
+        return this.trainingMapper.toDto(trainings);
     }
 
 }
