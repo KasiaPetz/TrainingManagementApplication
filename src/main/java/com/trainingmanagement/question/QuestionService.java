@@ -12,8 +12,4 @@ public class QuestionService {
         this.questionDao = questionDao;
     }
 
-    public List<Question> getAll() {
-        return this.questionDao.findAll();
-    }
-
 }

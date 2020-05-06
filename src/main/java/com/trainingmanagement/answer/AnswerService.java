@@ -14,7 +14,4 @@ public class AnswerService {
         this.answerDto = answerDto;
     }
 
-    public List<Answer> getAll() {
-        return this.answerDto.findAll();
-    }
 }
