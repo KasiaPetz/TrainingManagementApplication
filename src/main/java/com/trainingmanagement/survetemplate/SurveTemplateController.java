@@ -19,9 +19,10 @@ public class SurveTemplateController {
     }
 
     @GetMapping("/getAll")
-    public List<SurveTemplate> getAll() {
-        List<SurveTemplate> temp =  this.surveTemplateService.getAll();
-        return temp;
+    public List<SurveTemplateDto> getAll() {
+        List<SurveTemplate> surveTemplates =  this.surveTemplateService.getAll();
+
+        return null;
     }
 
 }
