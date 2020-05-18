@@ -22,9 +22,9 @@ public class TrainingController {
 
     @GetMapping("/getAll")
     public List<TrainingDto> getAll() {
-        final List<Training> trainings = this.trainingService.getAll();
+        final List<Training> trainings = this.trainingService.getAll(); //pobrane treningi
 
-        return this.trainingMapper.toDto(trainings);
+        return this.trainingMapper.toDto(trainings); //przerabiam liste trainigs na trainigsDTO
     }
 
 }

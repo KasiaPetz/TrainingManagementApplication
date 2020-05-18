@@ -12,17 +12,21 @@ import java.util.List;
 public class SurveTemplateController {
 
     private final SurveTemplateService surveTemplateService;
+    private final SurveTemplateMapper surveTemplateMapper;
 
     @Autowired
-    public SurveTemplateController(SurveTemplateService surveTemplateService) {
+    public SurveTemplateController(SurveTemplateService surveTemplateService,
+                                   SurveTemplateMapper surveTemplateMapper) {
         this.surveTemplateService = surveTemplateService;
+        this.surveTemplateMapper = surveTemplateMapper;
     }
 
     @GetMapping("/getAll")
     public List<SurveTemplateDto> getAll() {
-        List<SurveTemplate> surveTemplates =  this.surveTemplateService.getAll();
+        List<SurveTemplate> surveTemplates =  this.surveTemplateService.getAll(); //pobrałam tamplaty
+        List<SurveTemplateDto> surveTemoateDtos = surveTemplateMapper.toDto(surveTemplates);
 
-        return null;
+        return surveTemoateDtos;
     }
 
 }
