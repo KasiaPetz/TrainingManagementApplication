@@ -18,8 +18,9 @@ public class Question {
     @Column(nullable = false)
     private String content;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String type;
+    private Type type;
 
     @ManyToOne
     @JoinColumn(name = "surve_template_fk", nullable = false)
@@ -36,7 +37,7 @@ public class Question {
         return content;
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 

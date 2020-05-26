@@ -24,9 +24,15 @@ public class SurveTemplateController {
     @GetMapping("/getAll")
     public List<SurveTemplateDto> getAll() {
         List<SurveTemplate> surveTemplates =  this.surveTemplateService.getAll(); //pobrałam tamplaty
-        List<SurveTemplateDto> surveTemoateDtos = surveTemplateMapper.toDto(surveTemplates);
 
-        return surveTemoateDtos;
+        List<SurveTemplateDto> surveTemplateDtos = surveTemplateMapper.toDto(surveTemplates);
+
+        return surveTemplateDtos;
     }
+
+    //tu skończyc
+//    public void createSurveTemplate(SurveTemplateDto surveTemplateDto) {
+//        surveTemplateMapper.
+//    }
 
 }

@@ -12,7 +12,7 @@ public class QuestionMapper {
         return new QuestionDto(
                 question.getId(),
                 question.getContent(),
-                question.getType());
+                question.getType().toString()); //emum na String do DTO
     }
 
     public List<QuestionDto> toDto(List<Question> questions) {
