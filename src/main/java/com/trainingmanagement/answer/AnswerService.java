@@ -3,15 +3,13 @@ package com.trainingmanagement.answer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class AnswerService {
-    private final AnswerDto answerDto;
+    private final AnswerDao answerDao;
 
     @Autowired
-    public AnswerService(AnswerDto answerDto) {
-        this.answerDto = answerDto;
+    public AnswerService(AnswerDao answerDao) {
+        this.answerDao = answerDao;
     }
 
 }

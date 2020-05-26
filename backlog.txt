@@ -1,2 +1,0 @@
-1. Metoda getAll z SurveTemplateControllera powinna zwrócić dtosy.
-2. Zrefactorowac AnswerDto na Dao.
