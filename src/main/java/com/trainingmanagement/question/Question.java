@@ -29,6 +29,12 @@ public class Question {
     @OneToMany(mappedBy = "question")
     private List<Answer> answers;
 
+    public Question(Integer id, String content, Type type) {
+        this.id = id;
+        this.content = content;
+        this.type = type;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -21,4 +21,18 @@ public class QuestionMapper {
                 .collect(Collectors.toList());
     }
 
+    //fromDto zamieniajaca QuestionDto na Question
+    public Question fromDto(QuestionDto questionDto) {
+        return new Question(
+                questionDto.getId(),
+                questionDto.getContent(),
+                Type.valueOf(questionDto.getType()) //konwersja Stringa na enum
+        );
+    }
+
+    public List<Question> fromDto(List<QuestionDto> questionDtos) {
+        return questionDtos.stream()
+                .map(this::fromDto)
+                .collect(Collectors.toList());
+    }
 }

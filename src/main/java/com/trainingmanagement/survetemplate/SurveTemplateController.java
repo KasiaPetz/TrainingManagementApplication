@@ -1,9 +1,7 @@
 package com.trainingmanagement.survetemplate;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,9 +28,11 @@ public class SurveTemplateController {
         return surveTemplateDtos;
     }
 
-    //tu skończyc
-//    public void createSurveTemplate(SurveTemplateDto surveTemplateDto) {
-//        surveTemplateMapper.
-//    }
+    @PostMapping("/create")
+    public void createSurveTemplate(@RequestBody SurveTemplateDto surveTemplateDto) {
+        SurveTemplate surveTemplate = surveTemplateMapper.fromDto(surveTemplateDto);
+
+        System.out.println(surveTemplateDto);
+    }
 
 }

@@ -18,4 +18,13 @@ public class SurveTemplateService {
     public List<SurveTemplate> getAll() {
         return this.surveTemplateDao.findAll();
     }
+
+    public void create(SurveTemplate surveTemplate) {
+        //Sprawdzić czy surveTemplate oraz lista jego pytań w polach id maja nulle
+        //jesli nie to rzuc wyjatek
+
+        //walidacja
+
+        //zapis surveTemplate do bazy danych za pomoca dao
+    }
 }

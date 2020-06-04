@@ -24,6 +24,12 @@ public class SurveTemplate {
     @OneToMany(mappedBy = "surveTemplate")
     private List<Surve> surves;
 
+    public SurveTemplate(Integer id, String name, List<Question> questions) {
+        this.id = id;
+        this.name = name;
+        this.questions = questions;
+    }
+
     public Integer getId() {
         return id;
     }
