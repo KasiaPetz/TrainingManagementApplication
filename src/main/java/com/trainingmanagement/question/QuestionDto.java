@@ -23,4 +23,12 @@ public class QuestionDto {
         return type;
     }
 
+    @Override
+    public String toString() {
+        return "QuestionDto{" +
+                "id=" + id +
+                ", content='" + content + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }

@@ -7,12 +7,12 @@ import java.util.List;
 public class SurveTemplateDto {
     private Integer id;
     private String name;
-    private List<QuestionDto> questionsDto;
+    private List<QuestionDto> questions;
 
-    public SurveTemplateDto(Integer id, String name, List<QuestionDto> questionsDto) {
+    public SurveTemplateDto(Integer id, String name, List<QuestionDto> questions) {
         this.id = id;
         this.name = name;
-        this.questionsDto = questionsDto;
+        this.questions = questions;
     }
 
     public Integer getId() {
@@ -24,7 +24,27 @@ public class SurveTemplateDto {
     }
 
     public List<QuestionDto> getQuestions() {
-        return questionsDto;
+        return questions;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setQuestions(List<QuestionDto> questions) {
+        this.questions = questions;
+    }
+
+    @Override
+    public String toString() {
+        return "SurveTemplateDto{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", questionsDto=" + questions +
+                '}';
+    }
 }
