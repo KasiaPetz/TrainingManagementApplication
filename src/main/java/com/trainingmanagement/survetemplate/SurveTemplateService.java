@@ -1,7 +1,9 @@
 package com.trainingmanagement.survetemplate;
 
+import com.trainingmanagement.question.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -19,12 +21,20 @@ public class SurveTemplateService {
         return this.surveTemplateDao.findAll();
     }
 
+    @Transactional
     public void create(SurveTemplate surveTemplate) {
-        //Sprawdzić czy surveTemplate oraz lista jego pytań w polach id maja nulle
-        //jesli nie to rzuc wyjatek
+        if(surveTemplate.getId() != null) {
+            throw new IllegalArgumentException("SurveTemplate can not have id while creating. Id: " + surveTemplate.getId());
+        }
+        for (Question question: surveTemplate.getQuestions()) {
+            if(question.getId() != null) {
+                throw new IllegalArgumentException("Question can not have id while creating. Id: " + question.getId());
+            }
+        }
 
-        //walidacja
+
 
         //zapis surveTemplate do bazy danych za pomoca dao
+
     }
 }
