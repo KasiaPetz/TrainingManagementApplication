@@ -3,7 +3,6 @@ package com.trainingmanagement.survetemplate;
 import com.trainingmanagement.question.Question;
 import com.trainingmanagement.question.QuestionDto;
 import com.trainingmanagement.question.QuestionMapper;
-import com.trainingmanagement.surve.Surve;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

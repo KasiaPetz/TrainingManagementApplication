@@ -31,18 +31,14 @@ public class SurveTemplateController {
     }
 
     @PostMapping("/create")
-    public void createSurveTemplate(@RequestBody SurveTemplateDto surveTemplateDto) {
+    public SurveTemplateDto createSurveTemplate(@RequestBody SurveTemplateDto surveTemplateDto) {
         SurveTemplate surveTemplate = surveTemplateMapper.fromDto(surveTemplateDto);
-
-        System.out.println(surveTemplateDto);
-
         try {
-            surveTemplateService.create(surveTemplate);
+            final SurveTemplate result = surveTemplateService.create(surveTemplate);
+            return surveTemplateMapper.toDto(result);
         } catch (IllegalArgumentException exception) {
             throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, exception.getMessage(), exception);
         }
-
-        //zapis
     }
 
 }
